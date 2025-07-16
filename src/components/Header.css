@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+/* Sabit header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 48px;
+  background-color: white;
+  box-shadow: 0 1px 5px #0000001a;
+}
+
+/* Logo */
+.logo img {
+  height: 58px;
+}
+
+/* Menü linkleri */
+.nav-links {
+  display: flex;
+  gap: 32px;
+  margin-right: 750px;
+}
+
+.nav-links a {
+  color: #1f2937;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 350;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #d62828;
+}
+
+/* Sağ ikonlar */
+.icons {
+  display: flex;
+  gap: 24px;
+  font-size: 22px;
+  position: relative;
+  color: #1f2937;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  border-radius: 9999px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sayfa içeriğini header'dan aşağıya itmek için */
+body {
+  padding-top: 80px; /* Header yüksekliğine göre ayarla */
+}

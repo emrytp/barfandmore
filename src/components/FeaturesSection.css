@@ -1,0 +1,56 @@
+.features-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Kartlar arası boşluk */
+  padding: 8px 1px; /* Üst-alt boşluk */
+  background-color: white; /* Arka plan temiz */
+}
+
+.feature-card {
+  position: relative;
+  width: 670px;
+  height: auto; /* Yükseklik otomatik */
+}
+
+.feature-card img {
+  height: 510px;        /* istediğin yükseklik */
+  width: auto;          /* genişlik otomatik ayarlanır */
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+  transition: transform 0.3s ease; /* hover animasyonu */
+}
+
+.feature-card:hover img {
+  transform: scale(1.05); /* Hover'da büyütme efekti */
+}
+
+.feature-content {
+  position: absolute;
+  top: 40px; /* yazı ve buton biraz aşağı */
+  width: 100%;
+  text-align: center;
+}
+
+.feature-content h2 {
+  color: white;
+  font-size: 22px;  /* Küçültüldü */
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feature-content button {
+  background-color: #e10600;
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Küçültüldü */
+  font-size: 14px;    /* Küçültüldü */
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.feature-content button:hover {
+  background-color: white;
+  color: black;
+}

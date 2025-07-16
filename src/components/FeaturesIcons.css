@@ -1,0 +1,36 @@
+.features-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 250px;
+  padding: 60px 0;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.feature-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 200px;
+}
+
+.feature-icon-item img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.feature-icon-item img:hover {
+  transform: scale(1.1);
+}
+
+.feature-icon-item p {
+  font-size: 16px;
+  font-weight: 50;
+  color: #111;
+  margin: 0;
+}
