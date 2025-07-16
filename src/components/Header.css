@@ -47,8 +47,10 @@
   font-size: 22px;
   position: relative;
   color: #1f2937;
+  align-items: center;
 }
 
+/* Sepet ikonu */
 .cart {
   position: relative;
 }
@@ -70,5 +72,6 @@
 
 /* Sayfa içeriğini header'dan aşağıya itmek için */
 body {
-  padding-top: 80px; /* Header yüksekliğine göre ayarla */
+  padding-top: 80px;
 }
+

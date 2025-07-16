@@ -1,263 +1,159 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import './Products.css';
+import Header from "./Header.jsx";
 
 const Products = () => {
   const [activeSort, setActiveSort] = useState("Fiyat artan");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Tümü");
 
   const sortOptions = [
     "Fiyat artan",
     "Fiyat azalan",
-    "İndirim oranı artan",
-    "İndirim oranı azalan",
     "İlk eklenen",
     "Son eklenen"
   ];
 
-  const productElements = Array.from(document.querySelectorAll('.product-card'));
+  const categoryOptions = [
+    "Tümü",
+    "Barf ECOMIX Köpek Maması",
+    "Barf Premium Köpek Maması",
+    "Kedi Oyuncakları",
+    "Kurutulmuş Köpek Ödülleri",
+    "Köpek Aksesuarları",
+    "Köpek Oyuncağı"
+  ];
 
-  const getPriceValue = (el) => {
-    const priceText = el.querySelector('.product-price')?.textContent || "";
-    return parseFloat(priceText.replace("₺", "").replace(".", "").replace(",", "."));
-  };
+  const products = [
+    { img: "pilic-boyun.jpg", name: "Tavuk Boyun Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
+    { img: "barf-beef-10kg.jpg", name: "10 kg (1000 Gr. Aç Bitir)", price: "₺1.620,00", brand: "Barf Beef Premium", stock: false, category: "Barf Premium Köpek Maması" },
+    { img: "barf-beef-13kg.jpg", name: "13 kg (1000 Gr. Aç Bitir)", price: "₺2.100,00", brand: "Barf Beef Premium", stock: false, category: "Barf Premium Köpek Maması" },
+    { img: "barf-beef-20kg.jpg", name: "20 kg (1000 Gr. Aç Bitir)", price: "₺2.940,00", brand: "Barf Beef Premium", stock: false, category: "Barf Premium Köpek Maması" },
+    { img: "ecomix-20kg.jpg", name: "ECOMİX 20 kg (1000 Gr. Aç Bitir)", price: "₺2.200,00", brand: "Barf Ecomix", stock: false, category: "Barf ECOMIX Köpek Maması" },
+    { img: "ecomix-20kg.jpg", name: "ECOMİX 7 kg (1000 Gr. Aç Bitir)", price: "₺900,00", brand: "Barf Ecomix", stock: false, category: "Barf ECOMIX Köpek Maması" },
+    { img: "ecomix-14kg.jpg", name: "ECOMİX 14 kg (1000 Gr. Aç Bitir)", price: "₺1.700,00", brand: "Barf Ecomix", stock: false, category: "Barf ECOMIX Köpek Maması" },
+    { img: "barf-chick-indirim-20-kg.jpg", name: "ECOMİX 20 kg (1000 Gr. Tekli Ambalaj)", price: "₺1.725,00", brand: "Barf Chick Premium", stock: false, category: "Barf Premium Köpek Maması" },
+    { img: "barf-chick-indirim-10-kg.jpg", name: "ECOMİX 10 kg (1000 Gr. Tekli Ambalaj)", price: "₺1.080,00", brand: "Barf Chick Premium", stock: false, category: "Barf Premium Köpek Maması" },
+    { img: "pilic-ayak.jpg", name: "Tavuk Ayak Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
+    { img: "dana-akciger.jpg", name: "Dana Akciğer Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
+    { img: "dana-girtlak.jpg", name: "Dana Gırtlak Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
+    { img: "dana-kulak.jpg", name: "Dana Kulak Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
+    { img: "kuzu-girtlak.jpg", name: "Kuzu Gırtlak Köpek Ödül Maması", price: "₺100,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
+    { img: "kuzu-kulak.jpg", name: "Kuzu Kulak Köpek Ödül Maması", price: "₺120,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
+    { img: "kuzu-paca.jpg", name: "Kuzu Paça Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
+    { img: "kedi-alay-oyuncagi.jpg", name: "Kedi Alay Oyuncağı", price: "₺250,00", brand: "Barf and More", stock: true, category: "Kedi Oyuncakları" },
+    { img: "yaka-tutcu.jpg", name: "Silikonlu Köpek Yaka Tutucu", price: "₺300,00", brand: "Barf and More", stock: true, category: "Köpek Aksesuarları" },
+    { img: "woof-soda.jpg", name: "Peluş Gıcırtılı Köpek Oyuncağı", price: "₺800,00", brand: "Barf and More", stock: true, category: "Köpek Oyuncağı" },
+    { img: "pizza.jpg", name: "Peluş Gıcırtılı Pizza Dilimi Köpek Oyuncağı", price: "₺800,00", brand: "Barf and More", stock: true, category: "Köpek Oyuncağı" },
+    { img: "pembe.jpg", name: "Gıcırtılı Naylon Köpek Oyuncağı", price: "₺300,00", brand: "Barf and More", stock: true, category: "Köpek Oyuncağı" },
+    { img: "oyuncak.jpg", name: "Gıcırtılı Naylon Köpek Oyuncağı", price: "₺300,00", brand: "Barf and More", stock: true, category: "Köpek Oyuncağı" }
+  ];
 
-  const sortedCards = () => {
-    const container = document.querySelector('.product-grid');
-    if (!container) return;
+  const parsePrice = (priceStr) =>
+    parseFloat(priceStr.replace("₺", "").replace(/\./g, "").replace(",", "."));
 
-    const items = Array.from(container.children);
+  const filteredProducts = useMemo(() => {
+    let filtered = [...products];
 
-    let sorted;
-    switch (activeSort) {
-      case "Fiyat artan":
-        sorted = items.sort((a, b) => getPriceValue(a) - getPriceValue(b));
-        break;
-      case "Fiyat azalan":
-        sorted = items.sort((a, b) => getPriceValue(b) - getPriceValue(a));
-        break;
-      case "İlk eklenen":
-        sorted = items.sort((a, b) => a.dataset.index - b.dataset.index);
-        break;
-      case "Son eklenen":
-        sorted = items.sort((a, b) => b.dataset.index - a.dataset.index);
-        break;
-      default:
-        sorted = items;
+    if (selectedCategory !== "Tümü") {
+      filtered = filtered.filter(p => p.category === selectedCategory);
     }
 
-    sorted.forEach((item) => container.appendChild(item));
-  };
+    if (searchTerm.trim() !== "") {
+      filtered = filtered.filter(
+        p =>
+          p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          p.brand.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
 
-  React.useEffect(() => {
-    sortedCards();
-  }, [activeSort]);
+    switch (activeSort) {
+      case "Fiyat artan":
+        return filtered.sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
+      case "Fiyat azalan":
+        return filtered.sort((a, b) => parsePrice(b.price) - parsePrice(a.price));
+      case "İlk eklenen":
+        return filtered; // orijinal sıralama
+      case "Son eklenen":
+        return filtered.reverse();
+      default:
+        return filtered;
+    }
+  }, [products, searchTerm, activeSort, selectedCategory]);
 
   return (
-    <div className="products-page">
-      {/* Kategori */}
-      <aside className="sidebar">
-        <div className="search-box">
-          <input type="text" placeholder="Ne aramıştınız?" />
-        </div>
+    <>
+      <Header />
+      <div className="products-page">
+        <aside className="sidebar">
+          <div className="search-box">
+            <input
+              type="text"
+              placeholder="Ne aramıştınız?"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
+          <h3>Alt Kategoriler</h3>
+          <ul>
+            {categoryOptions.map((cat, i) => (
+              <li key={i}>
+                <button
+                  onClick={() => setSelectedCategory(cat)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    fontSize: "14px",
+                    cursor: "pointer",
+                    color: selectedCategory === cat ? "#d62828" : "#222",
+                    fontWeight: selectedCategory === cat ? "bold" : "normal"
+                  }}
+                >
+                  {cat}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </aside>
 
-        <h3>Alt Kategoriler</h3>
-        <ul>
-          <li><a href="#">Barf ECOMIX Köpek Maması (3)</a></li>
-          <li><a href="#">Barf Premium Köpek Maması (5)</a></li>
-          <li><a href="#">Kedi Oyuncakları (1)</a></li>
-          <li><a href="#">Kurutulmuş Köpek Ödülleri (8)</a></li>
-          <li><a href="#">Köpek Aksesuarları (1)</a></li>
-          <li><a href="#">Köpek Oyuncağı (4)</a></li>
-        </ul>
-      </aside>
-
-      {/* Sıralama ve ürünler */}
-      <div className="right-content">
-        <div className="header">
-          <h2>Barf ECOMIX Köpek Maması</h2>
-          <span className="product-count">22 ürün</span>
-        </div>
-
-        <div className="sort-tabs">
-          {sortOptions.map((option, index) => (
-            <button
-              key={index}
-              className={activeSort === option ? "active" : ""}
-              onClick={() => setActiveSort(option)}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-
-        {/* Tüm ürünler tek grid içinde */}
-        <div className="product-grid">
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/pilic-boyun.jpg" alt="Piliç Boyun" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Tavuk Boyun Köpek Ödül Maması</p>
-            <p className="product-price">₺90.00</p>
+        <div className="right-content">
+          <div className="category-title">
+            <h2>
+              {selectedCategory === "Tümü" ? "Barf ECOMIX Köpek Maması" : selectedCategory}
+            </h2>
+            <span className="product-count">{filteredProducts.length} ürün</span>
           </div>
 
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/barf-beef-10kg.jpg" alt="Beef 10kg" />
-            <h4>Barf Beef Premium</h4>
-            <p className="product-name">10 kg (1000 Gr. Aç Bitir)</p>
-            <p className="product-price">₺1.620,00</p>
+          <div className="sort-tabs">
+            {sortOptions.map((option, index) => (
+              <button
+                key={index}
+                className={activeSort === option ? "active" : ""}
+                onClick={() => setActiveSort(option)}
+              >
+                {option}
+              </button>
+            ))}
           </div>
 
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/barf-beef-13kg.jpg" alt="Beef 13kg" />
-            <h4>Barf Beef Premium</h4>
-            <p className="product-name">13 kg (1000 Gr. Aç Bitir)</p>
-            <p className="product-price">₺2.100,00</p>
-          </div>
-
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/barf-beef-20kg.jpg" alt="Beef 20kg" />
-            <h4>Barf Beef Premium</h4>
-            <p className="product-name">20 kg (1000 Gr. Aç Bitir)</p>
-            <p className="product-price">₺2.940,00</p>
-          </div>
-
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/ecomix-20kg.jpg" alt="Ecomix 20kg" />
-            <h4>Barf Ecomix</h4>
-            <p className="product-name">ECOMİX 20 kg (1000 Gr. Aç Bitir)</p>
-            <p className="product-price">₺2.200,00</p>
-          </div>
-
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/ecomix-20kg.jpg" alt="Ecomix 7kg" />
-            <h4>Barf Ecomix</h4>
-            <p className="product-name">ECOMİX 7 kg (1000 Gr. Aç Bitir)</p>
-            <p className="product-price">₺900,00</p>
-          </div>
-
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/ecomix-14kg.jpg" alt="Ecomix 14kg" />
-            <h4>Barf Ecomix</h4>
-            <p className="product-name">ECOMİX 14 kg (1000 Gr. Aç Bitir)</p>
-            <p className="product-price">₺1.700,00</p>
-          </div>
-
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/barf-chick-indirim-20-kg.jpg" alt="Chick 20kg" />
-            <h4>Barf Chick Premium</h4>
-            <p className="product-name">ECOMİX 20 kg (1000 Gr. Tekli Ambalaj)</p>
-            <p className="product-price">₺1.725,00</p>
-          </div>
-
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/barf-chick-indirim-10-kg.jpg" alt="Chick 20kg" />
-            <h4>Barf Chick Premium</h4>
-            <p className="product-name">ECOMİX 10 kg (1000 Gr. Tekli Ambalaj)</p>
-            <p className="product-price">₺1.080,00</p>
-          </div>
-
-          <div className="product-card">
-            <img src="/img/ürünler/pilic-ayak.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Tavuk Ayak Köpek Ödül Maması</p>
-            <p className="product-price">₺90,00</p>
-          </div>
-
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/dana-akciger.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Dana Akciğer Köpek Ödül Maması</p>
-            <p className="product-price">₺90,00</p>
-          </div>
-                   
-          <div className="product-card">
-            <img src="/img/ürünler/dana-girtlak.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Dana Gırtlak Köpek Ödül Maması</p>
-            <p className="product-price">₺90,00</p>
-          </div>
-                    
-          <div className="product-card">
-            <img src="/img/ürünler/dana-kulak.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Dana Kulak Köpek Ödül Maması</p>
-            <p className="product-price">₺90,00</p>
-          </div>
-                 
-          <div className="product-card">
-            <img src="/img/ürünler/kuzu-girtlak.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Kuzu Gırtlak Köpek Ödül Maması</p>
-            <p className="product-price">₺100,00</p>
-          </div>
-                
-          <div className="product-card">
-            <img src="/img/ürünler/kuzu-kulak.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Kuzu Kulak Köpek Ödül Maması</p>
-            <p className="product-price">₺120,00</p>
-          </div>
-
-          <div className="product-card out-of-stock">
-            <span className="sold-out-badge">Tükendi</span>
-            <img src="/img/ürünler/kuzu-paca.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Kuzu Paça Köpek Ödül Maması</p>
-            <p className="product-price">₺90,00</p>
-          </div>
-
-          <div className="product-card">
-            <img src="/img/ürünler/kedi-alay-oyuncagi.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Kedi Alay Oyuncağı</p>
-            <p className="product-price">₺250,00</p>
-          </div>
-
-          <div className="product-card">
-            <img src="/img/ürünler/yaka-tutcu.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Silikonlu Köpek Yaka Tutucu</p>
-            <p className="product-price">₺300,00</p>
-          </div>
-
-         <div className="product-card">
-            <img src="/img/ürünler/woof-soda.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Peluş Gıcırtılı Köpek Oyuncağı</p>
-            <p className="product-price">₺800,00</p>
-          </div>
-
-         <div className="product-card">
-            <img src="/img/ürünler/pizza.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Peluş Gıcırtılı Pizza Dilimi Köpek Oyuncağı</p>
-            <p className="product-price">₺800,00</p>
-          </div>
-        
-         <div className="product-card">
-            <img src="/img/ürünler/pembe.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Gıcırtılı Naylon Köpek Oyuncağı</p>
-            <p className="product-price">₺300,00</p>
-          </div>
- 
-         <div className="product-card">
-            <img src="/img/ürünler/oyuncak.jpg" alt="Chick 20kg" />
-            <h4>Barf and More</h4>
-            <p className="product-name">Gıcırtılı Naylon Köpek Oyuncağı</p>
-            <p className="product-price">₺300,00</p>
+          <div className="product-grid">
+            {filteredProducts.map((product, index) => (
+              <div
+                key={index}
+                className={`product-card${!product.stock ? " out-of-stock" : ""}`}
+              >
+                {!product.stock && <span className="sold-out-badge">Tükendi</span>}
+                <img src={`/img/ürünler/${product.img}`} alt={product.name} />
+                <h4>{product.brand}</h4>
+                <p className="product-name">{product.name}</p>
+                <p className="product-price">{product.price}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

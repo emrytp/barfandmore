@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './HeroSlider.css';
 import "slick-carousel/slick/slick.css"; // sadece bu, theme.css YOK!
@@ -17,6 +18,8 @@ const PrevArrow = ({ onClick }) => (
 );
 
 const HeroSlider = () => {
+  const navigate = useNavigate();
+
   const sliderContent = [
     {
       image: '/img/hero1.jpg',
@@ -59,7 +62,12 @@ const HeroSlider = () => {
                 <h1 className="hero-title">
                   {slide.title1}<br />{slide.title2}
                 </h1>
-                <button className="hero-button">{slide.buttonText}</button>
+                <button
+                  className="hero-button"
+                  onClick={() => navigate('/urunler')}
+                >
+                  {slide.buttonText}
+                </button>
               </div>
             </div>
           </div>

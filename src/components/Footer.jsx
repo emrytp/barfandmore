@@ -1,5 +1,6 @@
 import React from "react";
-import "./Footer.css"; // varsa stil dosyası
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import "./Footer.css";
 
 const Footer = () => {
   return (
@@ -8,10 +9,15 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Sosyal Medya Hesaplarımız</h4>
           <div className="footer-social">
-            <a href="#"><i className="fab fa-facebook-f"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <FaInstagram />
+            </a>
           </div>
         </div>
+
         <div className="footer-column">
           <h4>Barf and More</h4>
           <ul>
@@ -21,6 +27,7 @@ const Footer = () => {
             <li><a href="#">İletişim</a></li>
           </ul>
         </div>
+
         <div className="footer-column">
           <h4>Müşteri Hizmetleri</h4>
           <ul>
@@ -29,6 +36,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
       <div className="footer-bottom">
         <p>©2024 Tüm Hakları Saklıdır - Endo Gıda A.Ş.</p>
       </div>
@@ -36,4 +44,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; // ✅ Eksik olan kısım bu
+export default Footer;

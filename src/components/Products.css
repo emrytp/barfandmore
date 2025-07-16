@@ -60,15 +60,15 @@ body {
   flex-direction: column;
 }
 
-/* Başlık ve sayaç */
-.header {
+/* Başlık ve ürün sayacı (yeni .category-title alanı) */
+.category-title {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.header h2 {
+.category-title h2 {
   font-size: 26px;
   font-weight: 600;
   margin: 0;
