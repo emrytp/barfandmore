@@ -11,6 +11,8 @@ import Footer from "./components/Footer";
 import Products from "./components/Products";
 import Contact from "./components/Contact";
 import Loader from "./components/Loader";
+import KvkkPage from "./components/KvkkPage";
+import SssPage from "./components/SssPage"; 
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,6 +53,8 @@ const AppContent = () => {
         />
         <Route path="/urunler" element={<Products />} />
         <Route path="/iletisim" element={<Contact />} />
+        <Route path="/kvkk" element={<KvkkPage />} />
+        <Route path="/sss" element={<SssPage />} /> 
       </Routes>
       <Footer />
     </>

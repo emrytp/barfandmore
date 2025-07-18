@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import "./Footer.css";
 
@@ -9,10 +10,10 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Sosyal Medya Hesaplarımız</h4>
           <div className="footer-social">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/barfandmore/" target="_blank" rel="noreferrer">
               <FaFacebookF />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/barfandmore/" target="_blank" rel="noreferrer">
               <FaInstagram />
             </a>
           </div>
@@ -21,18 +22,18 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Barf and More</h4>
           <ul>
-            <li><a href="#">Anasayfa</a></li>
-            <li><a href="#">Ürünler</a></li>
+            <li><Link to="/">Anasayfa</Link></li>
+            <li><Link to="/urunler">Ürünler</Link></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#">İletişim</a></li>
+            <li><Link to="/iletisim">İletişim</Link></li>
           </ul>
         </div>
 
         <div className="footer-column">
           <h4>Müşteri Hizmetleri</h4>
           <ul>
-            <li><a href="#">KVKK</a></li>
-            <li><a href="#">S.S.S</a></li>
+            <li><Link to="/kvkk">KVKK</Link></li>
+            <li><Link to="/sss">S.S.S</Link></li> 
           </ul>
         </div>
       </div>

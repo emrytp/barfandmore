@@ -3,7 +3,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import './ContactSection.css';
 
 const ContactSection = () => {
-  const [state, handleSubmit] = useForm("myzpybwo"); // Formspree form ID
+  const [state, handleSubmit] = useForm("meozqpvn"); // Formspree form kimliği güncellendi
   const [countryCode, setCountryCode] = useState('+90');
 
   const [formData, setFormData] = useState({
@@ -11,7 +11,7 @@ const ContactSection = () => {
     soyad: '',
     email: '',
     telefon: '',
-    message: '', // burada "mesaj" yerine "message" kullanıldı
+    message: '',
     kvkkOnay: false,
   });
 
@@ -64,6 +64,7 @@ const ContactSection = () => {
                   <option value="+90">🇹🇷 +90</option>
                   <option value="+1">🇺🇸 +1</option>
                   <option value="+44">🇬🇧 +44</option>
+                  {/* İhtiyaca göre daha fazla ülke kodu ekleyebilirsiniz */}
                 </select>
                 <input
                   type="tel"

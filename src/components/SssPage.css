@@ -1,0 +1,32 @@
+.sss-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #1f2937;
+}
+
+.sss-container h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+details {
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  padding: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+summary {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+details p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
