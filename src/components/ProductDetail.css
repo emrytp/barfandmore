@@ -1,0 +1,143 @@
+.product-detail-page {
+  font-family: 'Montserrat', sans-serif;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-detail-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Küçük görsel alanı daraltıldı */
+.product-thumbnails {
+  flex: 0 0 100px; /* Eskiden 180px’ti, artık daha dar */
+  text-align: center;
+  font-size: 14px;
+}
+
+.product-thumbnails img {
+  width: 80px; /* Görsel boyutu da biraz küçültüldü */
+  height: auto;
+  margin-bottom: 8px;
+}
+
+
+.product-main-image {
+  flex: 1 1 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.product-main-image img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+}
+
+.product-info {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-info h4 {
+  font-size: 14px;
+  color: #888;
+}
+
+.product-info h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.stock-status {
+  padding: 10px;
+  background-color: #e5e5e5;
+  text-align: center;
+  font-weight: 600;
+}
+
+.stock-status.out {
+  background-color: #f2f2f2;
+  color: #444;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 12px;
+  background-color: #25D366;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.product-description {
+  margin-top: 60px;
+}
+
+.product-description h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.favorites-section {
+  margin-top: 80px;
+}
+
+.favorites-section h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.favorite-card {
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #eaeaea;
+  transition: transform 0.2s;
+}
+
+.favorite-card:hover {
+  transform: translateY(-3px);
+}
+
+.favorite-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.favorite-card h4 {
+  font-size: 16px;
+  margin: 10px 0 4px;
+}
+
+.favorite-card p {
+  font-weight: bold;
+}
+
+.favorite-card.out-of-stock {
+  opacity: 0.4;
+}
