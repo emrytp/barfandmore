@@ -54,7 +54,7 @@ const ProductDetail = () => {
           </div>
           <a
             className="whatsapp-button"
-            href="https://wa.me/905555555555"
+            href="https://wa.me/905325678280"
             target="_blank"
             rel="noopener noreferrer"
           >

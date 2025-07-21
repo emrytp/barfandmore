@@ -21,10 +21,10 @@ const Header = () => {
       </nav>
 
       <div className="icons">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+         <a href="https://www.facebook.com/barfandmore/" target="_blank" rel="noreferrer">
           <FaFacebookF />
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/barfandmore/" target="_blank" rel="noreferrer">
           <FaInstagram />
         </a>
       </div>
