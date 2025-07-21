@@ -1,0 +1,47 @@
+.blog-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.blog-banner-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* İçerik kutusu ortalanmış ve düzgün boşluklarla */
+.blog-content-wrapper {
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  padding: 0 24px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: left;
+}
+
+/* Başlık */
+.blog-content-wrapper h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1f2937;
+  text-align: center; /* Ortaladık */
+}
+
+/* Paragraflar */
+.blog-content-wrapper p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Paylaşım yazısı */
+.blog-share {
+  margin-top: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+}

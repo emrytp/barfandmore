@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // yönlendirme için ekledik
+import { useNavigate } from "react-router-dom"; 
 import "./FeaturesSection.css";
 
 const FeaturesSection = () => {

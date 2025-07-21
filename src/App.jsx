@@ -13,12 +13,13 @@ import Contact from "./components/Contact";
 import Loader from "./components/Loader";
 import KvkkPage from "./components/KvkkPage";
 import SssPage from "./components/SssPage";
-import ProductDetail from "./components/ProductDetail"; 
+import ProductDetail from "./components/ProductDetail";
+import Blog from "./components/Blog";
+import BlogDetail from "./components/BlogDetail";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Sayfa geçişlerini algılayan özel wrapper
 const AppContent = () => {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -27,14 +28,12 @@ const AppContent = () => {
     setLoading(true);
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 1000); // Sayfa geçişlerinde 1 saniye loader
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, [location.pathname]);
 
-  if (loading) {
-    return <Loader />;
-  }
+  if (loading) return <Loader />;
 
   return (
     <>
@@ -57,6 +56,8 @@ const AppContent = () => {
         <Route path="/iletisim" element={<Contact />} />
         <Route path="/kvkk" element={<KvkkPage />} />
         <Route path="/sss" element={<SssPage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
       </Routes>
       <Footer />
     </>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import './HeroSlider.css';
-import "slick-carousel/slick/slick.css"; // sadece bu, theme.css YOK!
+import "slick-carousel/slick/slick.css"; 
 
 // Özel geçiş butonları (← →)
 const NextArrow = ({ onClick }) => (

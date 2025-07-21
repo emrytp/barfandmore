@@ -3,8 +3,9 @@ import { useForm, ValidationError } from '@formspree/react';
 import './ContactSection.css';
 
 const ContactSection = () => {
-  const [state, handleSubmit] = useForm("meozqpvn"); // Formspree form kimliği güncellendi
+  const [state, handleSubmit] = useForm("meozqpvn");
   const [countryCode, setCountryCode] = useState('+90');
+  const [showKvkkWarning, setShowKvkkWarning] = useState(false);
 
   const [formData, setFormData] = useState({
     ad: '',
@@ -21,10 +22,23 @@ const ContactSection = () => {
       ...prev,
       [name]: type === "checkbox" ? checked : value
     }));
+
+    if (name === "kvkkOnay" && checked) {
+      setShowKvkkWarning(false);
+    }
   };
 
   const handleCountryCodeChange = (e) => {
     setCountryCode(e.target.value);
+  };
+
+  const handleSubmitWithKvkkCheck = (e) => {
+    if (!formData.kvkkOnay) {
+      e.preventDefault();
+      setShowKvkkWarning(true);
+      return;
+    }
+    handleSubmit(e);
   };
 
   if (state.succeeded) {
@@ -39,32 +53,56 @@ const ContactSection = () => {
           Görüş, öneri ya da şikayetiniz paylaşmak isterseniz, "İletişim Formu"nu doldurarak bize ulaştırabilirsiniz.
         </p>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form" onSubmit={handleSubmitWithKvkkCheck}>
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="ad">* Ad</label>
-              <input type="text" id="ad" name="ad" value={formData.ad} onChange={handleChange} required />
+              <input
+                type="text"
+                id="ad"
+                name="ad"
+                value={formData.ad}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="form-group">
               <label htmlFor="soyad">* Soyad</label>
-              <input type="text" id="soyad" name="soyad" value={formData.soyad} onChange={handleChange} required />
+              <input
+                type="text"
+                id="soyad"
+                name="soyad"
+                value={formData.soyad}
+                onChange={handleChange}
+                required
+              />
             </div>
           </div>
 
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="email">* Email</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
             <div className="form-group">
               <label htmlFor="telefon">Telefon</label>
               <div className="phone-input-group">
-                <select className="country-code-select" value={countryCode} onChange={handleCountryCodeChange}>
+                <select
+                  className="country-code-select"
+                  value={countryCode}
+                  onChange={handleCountryCodeChange}
+                >
                   <option value="+90">🇹🇷 +90</option>
                   <option value="+1">🇺🇸 +1</option>
                   <option value="+44">🇬🇧 +44</option>
-                  {/* İhtiyaca göre daha fazla ülke kodu ekleyebilirsiniz */}
                 </select>
                 <input
                   type="tel"
@@ -104,7 +142,15 @@ const ContactSection = () => {
             </label>
           </div>
 
-          <button type="submit" className="submit-button" disabled={state.submitting}>
+          {showKvkkWarning && (
+            <p className="kvkk-warning">Lütfen KVKK onay kutusunu işaretleyin.</p>
+          )}
+
+          <button
+            type="submit"
+            className="submit-button"
+            disabled={state.submitting}
+          >
             {state.submitting ? "Gönderiliyor..." : "GÖNDER"}
           </button>
         </form>
