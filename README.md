@@ -1,12 +1,71 @@
-# React + Vite
+React: 19.1.0  
+NodeJs: 20.18.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Barf and More 🐾
 
-Currently, two official plugins are available:
+Barf and More is a sleek, responsive website designed to showcase natural pet nutrition products and informative blog content — built entirely with **React + Vite**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- ⚛️ Built with React + Vite  
+- 🧭 Client-side routing with React Router  
+- 🖼️ Detailed Product and Blog pages  
+- 📄 KVKK and S.S.S. legal pages included  
+- 📱 Fully responsive & mobile-friendly design  
+- ✨ Animated loader and fallback 404 page  
+- 💌 Formspree-based contact form  
+- 🔎 Blog system with image banner support  
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+barfandmore-clone/
+├── public/
+│   └── img/                       # Static assets (images, logos, banners)
+│
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx             # Top navigation with logo and links
+│   │   ├── HeroSlider.jsx         # Home page hero slider
+│   │   ├── AboutSection.jsx       # About block on homepage
+│   │   ├── FeaturesSection.jsx    # Features description
+│   │   ├── FeaturesIcons.jsx      # Icon grid under features
+│   │   ├── ContactSection.jsx     # Homepage contact block
+│   │   ├── Products.jsx           # All products listing
+│   │   ├── ProductDetail.jsx      # Single product detail
+│   │   ├── Blog.jsx               # Blog listing page
+│   │   ├── BlogDetail.jsx         # Individual blog detail
+│   │   ├── KvkkPage.jsx           # KVKK information page
+│   │   ├── SssPage.jsx            # Sıkça Sorulan Sorular page
+│   │   ├── NotFound.jsx           # Custom 404 page
+│   │   ├── Loader.jsx             # Page transition loader
+│   │   └── Footer.jsx             # Bottom info and social media links
+│
+│   ├── App.jsx                    # Main app with route definitions
+│   └── main.jsx                   # React entry point
+```
+
+## 🛠️ Getting Started
+
+```bash
+git clone https://github.com/emrytp/barfandmore.git
+cd barfandmore
+
+npm install
+npm run dev
+```
+
+Then visit: [http://localhost:5173](http://localhost:5173)
+
+## 💻 Tech Stack
+- React  
+- Vite  
+- React Router  
+- Formspree  
+- Sass / CSS Modules  
+
+## 📜 License
+This project is for personal and portfolio purposes only.  
+All product and blog content belongs to the creator.
+
+## 🙌 Author
+Crafted with care by [@emrytp](https://github.com/emrytp)
