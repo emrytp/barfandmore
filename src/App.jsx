@@ -16,6 +16,7 @@ import SssPage from "./components/SssPage";
 import ProductDetail from "./components/ProductDetail";
 import Blog from "./components/Blog";
 import BlogDetail from "./components/BlogDetail";
+import NotFound from "./components/NotFound"; // <-- 404 bileşeni
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -58,6 +59,7 @@ const AppContent = () => {
         <Route path="/sss" element={<SssPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="*" element={<NotFound />} /> 
       </Routes>
       <Footer />
     </>
