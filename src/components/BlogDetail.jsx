@@ -2,6 +2,14 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./BlogDetail.css";
 
+/**
+ * Full blog content is stored in this object.
+ * Each key matches a blog post route (ID).
+ * title: Blog title
+ * image: Banner image path
+ * content: Multiline blog text, rendered as paragraphs
+ */
+
 const blogDetails = {
   "barfla-mutlu-kopekler": {
     title: "BARF’LA BESLENEN MUTLU VE SAĞLIKLI KÖPEKLER!",

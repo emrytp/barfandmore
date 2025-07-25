@@ -49,7 +49,7 @@ const KvkkPage = () => {
         <p>Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu ve ilgili sair mevzuat kapsamında hazırlanmıştır. İlgili yasal mevzuat ve/veya şirket politikası değiştiğinde bu metin de güncellenebilir.</p>
 
         <p className="kvkk-download">
-          <a href="/documents/kvkk-basvuru-formu.pdf" download>
+          <a href="https://www.tvf.com.tr/uploads/file/tvf-veri-sorumlusuna-basvuru-formu-turkce-ingilizce.pdf" download>
             KVKK Veri Sorumlusu Başvurusu Formunu indirmek için tıklayınız.
           </a>
         </p>

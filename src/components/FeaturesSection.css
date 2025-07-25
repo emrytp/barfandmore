@@ -1,40 +1,52 @@
 .features-wrapper {
   display: flex;
   justify-content: center;
-  gap: 8px; /* Kartlar arası boşluk */
-  padding: 8px 1px; /* Üst-alt boşluk */
-  background-color: white; /* Arka plan temiz */
+  gap: 8px;
+  padding: 8px 1px;
+  background-color: white;
 }
 
 .feature-card {
   position: relative;
   width: 670px;
-  height: auto; /* Yükseklik otomatik */
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-.feature-card img {
-  height: 510px;        /* istediğin yükseklik */
-  width: auto;          /* genişlik otomatik ayarlanır */
+/* 👇 Yeni: Görseli saran div */
+.feature-image-wrapper {
+  width: 100%;
+  height: 510px;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease; /* önemli */
+}
+
+/* Görsel */
+.feature-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  object-fit: contain;
-  margin: 0 auto;
-  transition: transform 0.3s ease; /* hover animasyonu */
+  transition: transform 0.3s ease;
 }
 
-.feature-card:hover img {
-  transform: scale(1.05); /* Hover'da büyütme efekti */
+/* Hover efekti: sadece wrapper büyür → img de onunla büyür */
+.feature-card:hover .feature-image-wrapper {
+  transform: scale(1.05);
 }
 
 .feature-content {
   position: absolute;
-  top: 40px; /* yazı ve buton biraz aşağı */
+  top: 40px;
   width: 100%;
   text-align: center;
 }
 
 .feature-content h2 {
   color: white;
-  font-size: 22px;  /* Küçültüldü */
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -43,11 +55,12 @@
   background-color: #e10600;
   color: white;
   border: none;
-  padding: 10px 20px; /* Küçültüldü */
-  font-size: 14px;    /* Küçültüldü */
+  padding: 10px 20px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
+  border-radius: 8px;
 }
 
 .feature-content button:hover {

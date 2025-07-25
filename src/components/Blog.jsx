@@ -1,8 +1,13 @@
-// blog.jsx
+// Blog.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import "./blog.css";
 
+/**
+ * Static list of blog post objects.
+ * Each post includes an id, image, title, and description.
+ * Can be replaced later with dynamic data (e.g., from an API or CMS).
+ */
 const blogPosts = [
   {
     id: "barfla-mutlu-kopekler",
@@ -90,13 +95,25 @@ const blogPosts = [
   }
 ];
 
+/**
+ * Blog component renders a responsive list of blog posts.
+ * Each blog card links to a detailed post via its dynamic route.
+ */
 const Blog = () => {
   return (
     <div className="blog-page">
       <div className="blog-grid">
         {blogPosts.map((post) => (
-          <Link to={`/blog/${post.id}`} className="blog-card" key={post.id}>
-            <img src={post.image} alt={post.title} className="blog-image" />
+          <Link
+            to={`/blog/${post.id}`}
+            className="blog-card"
+            key={post.id}
+          >
+            <img
+              src={post.image}
+              alt={post.title}
+              className="blog-image"
+            />
             <h3 className="blog-title">{post.title}</h3>
             <p className="blog-description">{post.description}</p>
             <span className="read-more">DEVAMINI OKU</span>

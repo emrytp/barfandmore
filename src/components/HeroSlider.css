@@ -10,6 +10,7 @@
 .hero-slide {
   position: relative;
   height: 680px;
+  min-height: 100vh; 
   background-size: cover;
   background-position: center;
   display: flex !important;

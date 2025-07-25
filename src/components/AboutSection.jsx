@@ -1,17 +1,27 @@
 import React from 'react';
 import './AboutSection.css';
 
-const AboutSection = () => {
+/**
+ * AboutCard component displays a short informative card about the BARF nutrition method
+ * used by Barf and More. It’s centered and styled to stand out in the layout.
+ */
+const AboutCard = () => {
   return (
-    <section className="about-section">
-      <div className="container">
-        <h2 className="about-title">Barf and More</h2>
-        <p className="about-text">
-          Köpekler, doğaları gereği her zaman çiğ beslenen canlılar olmuşlardır. Günümüzde genellikle kuru mamalar tercih edilse de BARF beslenme köpeklerin doğalarına en uygun beslenme biçimidir. Bir yıl raf ömrü olan kuru mamalar yerine, köpekler BARF mamalar ile hem daha sağlıklı hem daha mutlu olacaklardır.
+    <div className="aboutcard-wrapper">
+      <div className="aboutcard">
+        {/* Main title of the card */}
+        <span className="aboutcard__title">Barf and More</span>
+
+        {/* Description content of the card */}
+        <p className="aboutcard__content">
+          Dogs are naturally raw feeders. Although dry food is commonly used today,
+          BARF nutrition is the most natural form of feeding for dogs. Instead of
+          commercial dry foods with long shelf lives, BARF diets keep dogs both
+          healthier and happier.
         </p>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default AboutSection;
+export default AboutCard;

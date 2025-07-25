@@ -1,0 +1,56 @@
+/* Outer container that ensures the marquee spans full width */
+.barf-marquee-wrapper {
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* The visible marquee area (viewport) */
+.marquee {
+  overflow: hidden;        /* hides overflow content to allow scrolling illusion */
+  background: #000;        /* black background for contrast */
+  width: 100%;
+  padding: 6px 0;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* The actual moving content inside the marquee */
+.marquee__inner {
+  display: flex;
+  width: max-content;      /* allows content to stretch beyond parent width */
+  animation: marquee 18s linear infinite;  /* infinite horizontal scroll */
+  margin: 0;
+  padding: 0;
+}
+
+/* Each group of repeated text (duplicated for seamless loop) */
+.marquee__group {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual text span items */
+.marquee__group span {
+  white-space: nowrap;     /* prevents wrapping */
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 36px;      /* spacing between text items */
+  line-height: 1;
+  display: inline-block;
+}
+
+/* Keyframes to create leftward scrolling effect */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);  /* Moves to half so duplicated group fills the space */
+  }
+}

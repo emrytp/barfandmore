@@ -39,7 +39,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>©2024 Tüm Hakları Saklıdır - Endo Gıda A.Ş.</p>
+        <p>©2025 Tüm Hakları Saklıdır - Endo Gıda A.Ş.</p>
       </div>
     </footer>
   );

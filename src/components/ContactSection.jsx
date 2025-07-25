@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import './ContactSection.css';
 
+/**
+ * ContactSection component — A full contact form using Formspree.
+ * Includes name, email, phone with country code, message, and KVKK checkbox.
+ */
 const ContactSection = () => {
-  const [state, handleSubmit] = useForm("meozqpvn");
+  const [state, handleSubmit] = useForm("meozqpvn"); // Formspree form ID
   const [countryCode, setCountryCode] = useState('+90');
   const [showKvkkWarning, setShowKvkkWarning] = useState(false);
 
@@ -16,6 +20,7 @@ const ContactSection = () => {
     kvkkOnay: false,
   });
 
+  // Updates form state on input change
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -23,15 +28,18 @@ const ContactSection = () => {
       [name]: type === "checkbox" ? checked : value
     }));
 
+    // Hide KVKK warning if checkbox becomes checked
     if (name === "kvkkOnay" && checked) {
       setShowKvkkWarning(false);
     }
   };
 
+  // Updates selected country code for phone
   const handleCountryCodeChange = (e) => {
     setCountryCode(e.target.value);
   };
 
+  // Prevents submit if KVKK checkbox is not checked
   const handleSubmitWithKvkkCheck = (e) => {
     if (!formData.kvkkOnay) {
       e.preventDefault();
@@ -41,6 +49,7 @@ const ContactSection = () => {
     handleSubmit(e);
   };
 
+  // Show success message if submission is successful
   if (state.succeeded) {
     return <p className="success-message">Mesajınız başarıyla gönderildi!</p>;
   }
@@ -92,6 +101,7 @@ const ContactSection = () => {
               />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </div>
+
             <div className="form-group">
               <label htmlFor="telefon">Telefon</label>
               <div className="phone-input-group">

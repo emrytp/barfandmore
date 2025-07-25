@@ -1,30 +1,56 @@
-/* AboutSection.css */
-.about-section {
-  background-color: #f9f9f9;
+/* Wrapper centers the card on the page with spacing and a neutral background */
+.aboutcard-wrapper {
+  display: flex;
+  justify-content: center;
   padding: 60px 20px;
+  background-color: #f5f5f5;
+}
+
+/* Main card layout with border, shadow and subtle animation */
+.aboutcard {
+  width: 100%;
+  max-width: 1500px;
+  padding: 40px 30px;
+  background: #fff;
+  border: 6px solid #000;
+  box-shadow: 12px 12px 0 #000;
+  transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
 }
 
-.container {
-  max-width: 850px;
-  margin: 0 auto;
+/* Hover effect: card slightly lifts and the shadow deepens */
+.aboutcard:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 17px 17px 0 #000;
 }
 
-.about-title {
-  font-size: 45px;
-  font-weight: bold;
-  margin-bottom: 24px;
-  color: #1e1e1e;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Card title styling: large, bold, uppercase with a black underline */
+.aboutcard__title {
+  font-size: 36px;
+  font-weight: 900;
+  color: #000;
   text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
 }
 
-.about-text {
-  font-size: 18px;
+/* Decorative underline below the title */
+.aboutcard__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 3px;
+  background-color: #000;
+}
+
+/* Content paragraph styling: readable font and spacing */
+.aboutcard__content {
+  font-size: 17px;
+  line-height: 1.7;
   color: #333;
-  line-height: 1.8;
-  margin: 0 auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: justify;
-  max-width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
