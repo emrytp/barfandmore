@@ -14,10 +14,11 @@ const AboutCard = () => {
 
         {/* Description content of the card */}
         <p className="aboutcard__content">
-          Dogs are naturally raw feeders. Although dry food is commonly used today,
-          BARF nutrition is the most natural form of feeding for dogs. Instead of
-          commercial dry foods with long shelf lives, BARF diets keep dogs both
-          healthier and happier.
+         Köpekler doğaları gereği çiğ beslenirler. 
+         Günümüzde kuru mama yaygın olarak kullanılsa da, 
+         BARF beslenme köpekler için en doğal beslenme şeklidir. 
+         Uzun raf ömrüne sahip ticari kuru mamalar yerine 
+         BARF diyetiyle beslenen köpekler hem daha sağlıklı hem de daha mutlu olurlar.
         </p>
       </div>
     </div>

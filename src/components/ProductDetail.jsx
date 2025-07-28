@@ -12,19 +12,19 @@ const products = [
   { id: "ecomix-14kg-ac-bitir", name: "ECOMİX 14 kg (1000 Gr. Aç Bitir)", brand: "Barf Ecomix", price: "₺1.700,00", stock: false, description: "Barf Ecomix 14 kg Aç Bitir ürünüdür.", image: "/img/ürünler/ecomix-14kg.jpg" },
   { id: "ecomix-20kg-tekli", name: "ECOMİX 20 kg (1000 Gr. Tekli Ambalaj)", brand: "Barf Chick Premium", price: "₺1.725,00", stock: false, description: "Barf Chick Premium 20 kg Tekli Ambalaj.", image: "/img/ürünler/barf-chick-indirim-20-kg.jpg" },
   { id: "ecomix-10kg-tekli", name: "ECOMİX 10 kg (1000 Gr. Tekli Ambalaj)", brand: "Barf Chick Premium", price: "₺1.080,00", stock: false, description: "Barf Chick Premium 10 kg Tekli Ambalaj.", image: "/img/ürünler/barf-chick-indirim-10-kg.jpg" },
-  { id: "tavuk-ayak", name: "Tavuk Ayak Köpek Ödül Maması", brand: "Barf and More", price: "₺90,00", stock: true, description: "Doğal tavuk ayağından üretilmiştir.", image: "/img/ürünler/pilic-ayak.jpg" },
+  { id: "tavuk-ayak", name: "Tavuk Ayak Köpek Ödül Maması", brand: "Barf and More", price: "₺90,00", stock: false, description: "Doğal tavuk ayağından üretilmiştir.", image: "/img/ürünler/pilic-ayak.jpg" },
   { id: "dana-akciger", name: "Dana Akciğer Köpek Ödül Maması", brand: "Barf and More", price: "₺90,00", stock: false, description: "Doğal dana akciğerinden üretilmiştir.", image: "/img/ürünler/dana-akciger.jpg" },
-  { id: "dana-girtlak", name: "Dana Gırtlak Köpek Ödül Maması", brand: "Barf and More", price: "₺90,00", stock: true, description: "Doğal dana gırtlağından üretilmiştir.", image: "/img/ürünler/dana-girtlak.jpg" },
-  { id: "dana-kulak", name: "Dana Kulak Köpek Ödül Maması", brand: "Barf and More", price: "₺90,00", stock: true, description: "Doğal dana kulağından üretilmiştir.", image: "/img/ürünler/dana-kulak.jpg" },
-  { id: "kuzu-girtlak", name: "Kuzu Gırtlak Köpek Ödül Maması", brand: "Barf and More", price: "₺100,00", stock: true, description: "Doğal kuzu gırtlağından üretilmiştir.", image: "/img/ürünler/kuzu-girtlak.jpg" },
-  { id: "kuzu-kulak", name: "Kuzu Kulak Köpek Ödül Maması", brand: "Barf and More", price: "₺120,00", stock: true, description: "Doğal kuzu kulağından üretilmiştir.", image: "/img/ürünler/kuzu-kulak.jpg" },
+  { id: "dana-girtlak", name: "Dana Gırtlak Köpek Ödül Maması", brand: "Barf and More", price: "₺90,00", stock: false, description: "Doğal dana gırtlağından üretilmiştir.", image: "/img/ürünler/dana-girtlak.jpg" },
+  { id: "dana-kulak", name: "Dana Kulak Köpek Ödül Maması", brand: "Barf and More", price: "₺90,00", stock: false, description: "Doğal dana kulağından üretilmiştir.", image: "/img/ürünler/dana-kulak.jpg" },
+  { id: "kuzu-girtlak", name: "Kuzu Gırtlak Köpek Ödül Maması", brand: "Barf and More", price: "₺100,00", stock: false, description: "Doğal kuzu gırtlağından üretilmiştir.", image: "/img/ürünler/kuzu-girtlak.jpg" },
+  { id: "kuzu-kulak", name: "Kuzu Kulak Köpek Ödül Maması", brand: "Barf and More", price: "₺120,00", stock: false, description: "Doğal kuzu kulağından üretilmiştir.", image: "/img/ürünler/kuzu-kulak.jpg" },
   { id: "kuzu-paca", name: "Kuzu Paça Köpek Ödül Maması", brand: "Barf and More", price: "₺90,00", stock: false, description: "Doğal kuzu paçasından üretilmiştir.", image: "/img/ürünler/kuzu-paca.jpg" },
-  { id: "kedi-alay", name: "Kedi Alay Oyuncağı", brand: "Barf and More", price: "₺250,00", stock: true, description: "Eğlenceli kedi oyuncağı.", image: "/img/ürünler/kedi-alay-oyuncagi.jpg" },
-  { id: "yaka-tutucu", name: "Silikonlu Köpek Yaka Tutucu", brand: "Barf and More", price: "₺300,00", stock: true, description: "Pratik köpek tasma tutucusu.", image: "/img/ürünler/yaka-tutcu.jpg" },
-  { id: "woof-soda", name: "Peluş Gıcırtılı Köpek Oyuncağı", brand: "Barf and More", price: "₺800,00", stock: true, description: "Sevimli woof soda temalı oyuncak.", image: "/img/ürünler/woof-soda.jpg" },
-  { id: "pizza-dilim", name: "Peluş Gıcırtılı Pizza Dilimi Köpek Oyuncağı", brand: "Barf and More", price: "₺800,00", stock: true, description: "Gıcırtılı peluş pizza oyuncak.", image: "/img/ürünler/pizza.jpg" },
-  { id: "naylon-pembe", name: "Gıcırtılı Naylon Köpek Oyuncağı", brand: "Barf and More", price: "₺300,00", stock: true, description: "Pembe gıcırtılı naylon oyuncak.", image: "/img/ürünler/pembe.jpg" },
-  { id: "naylon-oyuncak", name: "Gıcırtılı Naylon Köpek Oyuncağı", brand: "Barf and More", price: "₺300,00", stock: true, description: "Gıcırtılı naylon oyuncak.", image: "/img/ürünler/oyuncak.jpg" }
+  { id: "kedi-alay", name: "Kedi Alay Oyuncağı", brand: "Barf and More", price: "₺250,00", stock: false, description: "Eğlenceli kedi oyuncağı.", image: "/img/ürünler/kedi-alay-oyuncagi.jpg" },
+  { id: "yaka-tutucu", name: "Silikonlu Köpek Yaka Tutucu", brand: "Barf and More", price: "₺300,00", stock: false, description: "Pratik köpek tasma tutucusu.", image: "/img/ürünler/yaka-tutcu.jpg" },
+  { id: "woof-soda", name: "Peluş Gıcırtılı Köpek Oyuncağı", brand: "Barf and More", price: "₺800,00", stock: false, description: "Sevimli woof soda temalı oyuncak.", image: "/img/ürünler/woof-soda.jpg" },
+  { id: "pizza-dilim", name: "Peluş Gıcırtılı Pizza Dilimi Köpek Oyuncağı", brand: "Barf and More", price: "₺800,00", stock: false, description: "Gıcırtılı peluş pizza oyuncak.", image: "/img/ürünler/pizza.jpg" },
+  { id: "naylon-pembe", name: "Gıcırtılı Naylon Köpek Oyuncağı", brand: "Barf and More", price: "₺300,00", stock: false, description: "Pembe gıcırtılı naylon oyuncak.", image: "/img/ürünler/pembe.jpg" },
+  { id: "naylon-oyuncak", name: "Gıcırtılı Naylon Köpek Oyuncağı", brand: "Barf and More", price: "₺300,00", stock: false, description: "Gıcırtılı naylon oyuncak.", image: "/img/ürünler/oyuncak.jpg" }
 ];
 
 const ProductDetail = () => {
@@ -50,7 +50,7 @@ const ProductDetail = () => {
           <h2>{product.name}</h2>
           <div className="product-price">{product.price}</div>
           <div className={`stock-status ${product.stock ? "in" : "out"}`}>
-            {product.stock ? "STOKTA VAR" : "STOKTA YOK"}
+            {product.stock ? "STOKTA YOK" : "STOKTA YOK"}
           </div>
           <a
             className="whatsapp-button"

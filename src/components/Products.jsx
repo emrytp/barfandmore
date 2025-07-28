@@ -30,7 +30,7 @@ const Products = () => {
     "Köpek Oyuncağı"
   ];
 
-  // Static product list (can be moved to external file or fetched via API later)
+  // Static product list (stock is all false now)
   const products = [
     { id: "tavuk-boyun-kopek-odul-mamasi", img: "pilic-boyun.jpg", name: "Tavuk Boyun Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
     { id: "barf-beef-10kg", img: "barf-beef-10kg.jpg", name: "10 kg (1000 Gr. Aç Bitir)", price: "₺1.620,00", brand: "Barf Beef Premium", stock: false, category: "Barf Premium Köpek Maması" },
@@ -41,26 +41,24 @@ const Products = () => {
     { id: "ecomix-14kg-ac-bitir", img: "ecomix-14kg.jpg", name: "ECOMİX 14 kg (1000 Gr. Aç Bitir)", price: "₺1.700,00", brand: "Barf Ecomix", stock: false, category: "Barf ECOMIX Köpek Maması" },
     { id: "ecomix-20kg-tekli", img: "barf-chick-indirim-20-kg.jpg", name: "ECOMİX 20 kg (Tekli Ambalaj)", price: "₺1.725,00", brand: "Barf Chick Premium", stock: false, category: "Barf Premium Köpek Maması" },
     { id: "ecomix-10kg-tekli", img: "barf-chick-indirim-10-kg.jpg", name: "ECOMİX 10 kg (Tekli Ambalaj)", price: "₺1.080,00", brand: "Barf Chick Premium", stock: false, category: "Barf Premium Köpek Maması" },
-    { id: "tavuk-ayak", img: "pilic-ayak.jpg", name: "Tavuk Ayak Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
+    { id: "tavuk-ayak", img: "pilic-ayak.jpg", name: "Tavuk Ayak Köpek Ödül Maması", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
     { id: "dana-akciger", img: "dana-akciger.jpg", name: "Dana Akciğer", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
-    { id: "dana-girtlak", img: "dana-girtlak.jpg", name: "Dana Gırtlak", price: "₺90,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
-    { id: "dana-kulak", img: "dana-kulak.jpg", name: "Dana Kulak", price: "₺90,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
-    { id: "kuzu-girtlak", img: "kuzu-girtlak.jpg", name: "Kuzu Gırtlak", price: "₺100,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
-    { id: "kuzu-kulak", img: "kuzu-kulak.jpg", name: "Kuzu Kulak", price: "₺120,00", brand: "Barf and More", stock: true, category: "Kurutulmuş Köpek Ödülleri" },
+    { id: "dana-girtlak", img: "dana-girtlak.jpg", name: "Dana Gırtlak", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
+    { id: "dana-kulak", img: "dana-kulak.jpg", name: "Dana Kulak", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
+    { id: "kuzu-girtlak", img: "kuzu-girtlak.jpg", name: "Kuzu Gırtlak", price: "₺100,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
+    { id: "kuzu-kulak", img: "kuzu-kulak.jpg", name: "Kuzu Kulak", price: "₺120,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
     { id: "kuzu-paca", img: "kuzu-paca.jpg", name: "Kuzu Paça", price: "₺90,00", brand: "Barf and More", stock: false, category: "Kurutulmuş Köpek Ödülleri" },
-    { id: "kedi-alay-oyuncagi", img: "kedi-alay-oyuncagi.jpg", name: "Kedi Alay Oyuncağı", price: "₺250,00", brand: "Barf and More", stock: true, category: "Kedi Oyuncakları" },
-    { id: "yaka-tutucu", img: "yaka-tutcu.jpg", name: "Silikonlu Yaka Tutucu", price: "₺300,00", brand: "Barf and More", stock: true, category: "Köpek Aksesuarları" },
-    { id: "woof-soda", img: "woof-soda.jpg", name: "Peluş Gıcırtılı Soda", price: "₺800,00", brand: "Barf and More", stock: true, category: "Köpek Oyuncağı" },
-    { id: "pizza-dilim", img: "pizza.jpg", name: "Peluş Pizza Oyuncağı", price: "₺800,00", brand: "Barf and More", stock: true, category: "Köpek Oyuncağı" },
-    { id: "naylon-pembe", img: "pembe.jpg", name: "Gıcırtılı Naylon (Pembe)", price: "₺300,00", brand: "Barf and More", stock: true, category: "Köpek Oyuncağı" },
-    { id: "naylon-oyuncak", img: "oyuncak.jpg", name: "Gıcırtılı Naylon Oyuncak", price: "₺300,00", brand: "Barf and More", stock: true, category: "Köpek Oyuncağı" }
+    { id: "kedi-alay-oyuncagi", img: "kedi-alay-oyuncagi.jpg", name: "Kedi Alay Oyuncağı", price: "₺250,00", brand: "Barf and More", stock: false, category: "Kedi Oyuncakları" },
+    { id: "yaka-tutucu", img: "yaka-tutcu.jpg", name: "Silikonlu Yaka Tutucu", price: "₺300,00", brand: "Barf and More", stock: false, category: "Köpek Aksesuarları" },
+    { id: "woof-soda", img: "woof-soda.jpg", name: "Peluş Gıcırtılı Soda", price: "₺800,00", brand: "Barf and More", stock: false, category: "Köpek Oyuncağı" },
+    { id: "pizza-dilim", img: "pizza.jpg", name: "Peluş Pizza Oyuncağı", price: "₺800,00", brand: "Barf and More", stock: false, category: "Köpek Oyuncağı" },
+    { id: "naylon-pembe", img: "pembe.jpg", name: "Gıcırtılı Naylon (Pembe)", price: "₺300,00", brand: "Barf and More", stock: false, category: "Köpek Oyuncağı" },
+    { id: "naylon-oyuncak", img: "oyuncak.jpg", name: "Gıcırtılı Naylon Oyuncak", price: "₺300,00", brand: "Barf and More", stock: false, category: "Köpek Oyuncağı" }
   ];
 
-  // Converts price string like "₺1.500,00" to 1500.00
   const parsePrice = (priceStr) =>
     parseFloat(priceStr.replace("₺", "").replace(/\./g, "").replace(",", "."));
 
-  // Filter and sort logic memoized for performance
   const filteredProducts = useMemo(() => {
     let filtered = [...products];
 
@@ -92,7 +90,6 @@ const Products = () => {
     <>
       <Header />
       <div className="products-page">
-        {/* Sidebar */}
         <aside className="sidebar">
           <div className="search-box">
             <input
@@ -125,7 +122,6 @@ const Products = () => {
           </ul>
         </aside>
 
-        {/* Product content */}
         <div className="right-content">
           <div className="category-title">
             <h2>{selectedCategory === "Tümü" ? "Barf ECOMIX Köpek Maması" : selectedCategory}</h2>
@@ -148,10 +144,10 @@ const Products = () => {
             {filteredProducts.map((product, index) => (
               <div
                 key={index}
-                className={`product-card${!product.stock ? " out-of-stock" : ""}`}
+                className={`product-card out-of-stock`}
                 onClick={() => navigate(`/urun/${product.id}`)}
               >
-                {!product.stock && <span className="sold-out-badge">Tükendi</span>}
+                <span className="sold-out-badge">Tükendi</span>
                 <img src={`/img/ürünler/${product.img}`} alt={product.name} />
                 <h4>{product.brand}</h4>
                 <p className="product-name">{product.name}</p>
