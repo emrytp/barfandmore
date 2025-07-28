@@ -148,7 +148,7 @@ const Products = () => {
                 onClick={() => navigate(`/urun/${product.id}`)}
               >
                 <span className="sold-out-badge">Tükendi</span>
-                <img src={`/img/ürünler/${product.img}`} alt={product.name} />
+                <img src={`/img/urunler/${product.img}`} alt={product.name} />
                 <h4>{product.brand}</h4>
                 <p className="product-name">{product.name}</p>
                 <p className="product-price">{product.price}</p>

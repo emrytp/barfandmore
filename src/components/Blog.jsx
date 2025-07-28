@@ -67,7 +67,7 @@ const blogPosts = [
     id: "uzak-durulmasi-gerekenler",
     image: "/img/blog/blog10.png",
     title: "EVCİL DOSTLARINIZIN UZAK DURMASI GEREKEN BESİNLER NELER?",
-    description: "Kakao bazlı ürünler, evcil hayvanlarda gıda zehirlenmesine en sık karışan...",
+    description: "Kakao bazlı urunler, evcil hayvanlarda gıda zehirlenmesine en sık karışan...",
   },
   {
     id: "barf-nedir",

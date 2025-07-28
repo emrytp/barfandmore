@@ -6,22 +6,22 @@ const products = [
   {
     id: 1,
     name: "BARF BEEF",
-    image: "/img/ürünler/dana-akciger.jpg"
+    image: "/img/urunler/dana-akciger.jpg"
   },
   {
     id: 2,
     name: "BARF CHICK",
-    image: "/img/ürünler/dana-girtlak.jpg"
+    image: "/img/urunler/dana-girtlak.jpg"
   },
   {
     id: 3,
     name: "BARF ECOMIX",
-    image: "/img/ürünler/dana-kulak.jpg"
+    image: "/img/urunler/dana-kulak.jpg"
   },
   {
     id: 4,
     name: "BARF OYUNCAK",
-    image: "/img/ürünler/oyuncak.jpg"
+    image: "/img/urunler/oyuncak.jpg"
   }
 ];
 

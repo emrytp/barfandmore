@@ -161,7 +161,7 @@ Erişkin ve herhangi bir performans göstermeyen köpekler günde 1 öğün besl
 9 hafta gelen gebelik süresinin ilk 6 haftasında gebe köpeğin fazladan beslenmesine gerek yoktur ancak köpeğin bu dönemde zayıflamasına da izin verilmemelidir. Gebeliğin 5-6. haftalarından itibaren ekstra bir mama değişikliği yapılmaksızın, günlük yiyecek miktarı her haftalık 10-15’lik dilimle doğuma kadar önceki miktarın %50’sine çıkarılır. Günlük verilen yiyecek miktarı 2-3 öğüne bölünerek yedirilmelidir. Gıdaların sindirilebilirliği yüksek olmalıdır. Özellikle gebeliğin son döneminde dış kapsamı yüksek gıdalar verilmemelidir.
 
 **Laktasyondaki (Süt Verimi) Köpeklerin Beslenmesi:**  
-Köpekler 2 ay kadar yavrularını emzirirler. Laktasyonun 3-6. haftası: süt veriminin en yüksek olduğu dönemdir. Bu dönemde enerji gereksinimi yaşama payının 2-3 katına çıkar. Laktasyon döneminde verilecek gıdaların; sindirilebilirliği, protein kalitesi ve lezzetliliğinin yüksek olması, vitamin ve mineraller bakımından yeterli olması gerekir. Bu dönemde ya da yavru köpeklerin ihtiyacını karşılamak amacıyla özel mama ürünleri vardır. Köpeklerin yoğun egzersizden sonra aşırı miktarda soğuk su içmeleri önlenmelidir.
+Köpekler 2 ay kadar yavrularını emzirirler. Laktasyonun 3-6. haftası: süt veriminin en yüksek olduğu dönemdir. Bu dönemde enerji gereksinimi yaşama payının 2-3 katına çıkar. Laktasyon döneminde verilecek gıdaların; sindirilebilirliği, protein kalitesi ve lezzetliliğinin yüksek olması, vitamin ve mineraller bakımından yeterli olması gerekir. Bu dönemde ya da yavru köpeklerin ihtiyacını karşılamak amacıyla özel mama urunleri vardır. Köpeklerin yoğun egzersizden sonra aşırı miktarda soğuk su içmeleri önlenmelidir.
 
 **Yavru Köpeklerin Beslenmesi:**  
 Yavru köpekler ilk 4 hafta sadece anne sütü ile beslenirler (günde 10-12 kez emzirilen anneleri). Anne sütünün verilemediği hallerde inek sütü dışındaki gıdalarla aşılama başlanmamalıdır. Bu amaçla günde 1-2 saat aralıklarla annelerin önerilen mama alternatifleri kullanılır. 6-8 haftalık yaşlarda tamamen sütten kesilebilirler; ancak bu kesim birdenbire yapılmamalıdır. Sütten kesme sürecinde aşamalı azaltma gerekir: 1. haftada gündüz öğün, sonraki 1-2 haftada 3-4 öğün şeklinde. 2-3 hafta içinde bu geçiş tamamlanır. İlk 4-6 ayda yüksek proteinli, enerji içeriği artırılmış mamalar verilmelidir. Kalsiyum, fosfor oranı önemlidir ve vücut koşullarından takip edilmelidir.
@@ -187,20 +187,20 @@ Yavru kediler (80-140 gr doğarlar) ilk 4 hafta tamamen anne sütüne bağımlı
   image: "/img/blog/blog10banner.jpg",
   content: `
 **Çikolata, Kahve ve Kafein**  
-Kakao bazlı ürünler, evcil hayvanlarda gıda zehirlenmesine en sık karışan ve karın ağrıları gibi hafif problemlerden nöbet ve ölümcül sonuçlara neden olan riskli maddelerdir.
+Kakao bazlı urunler, evcil hayvanlarda gıda zehirlenmesine en sık karışan ve karın ağrıları gibi hafif problemlerden nöbet ve ölümcül sonuçlara neden olan riskli maddelerdir.
 
 Araştırmacılar, çikolatanın evcil hayvanlar için toksik olan iki bileşik içerdiğini söyledi: teobromin ve kafein. Bu bileşikler hücresel süreçleri değiştirir ve hem merkezi sinir sisteminin hem de kalp kaslarının uyarılmasına sebep olur.
 
 **Soğan ve Sarımsak**  
 Soğan ve sarımsak gibi allium dehasındaki bitki türleri genellikle köpekleri ve kedileri hasta eder. Bu yaygın bileşenler, organosülfürik adı verilen bileşikleri içerir. Köpek veya kedi bir parça soğan bile yutarsa kanlarında tehlikeli değişikliklere neden olabilir.
 
-**Üzüm ve Kuru Ürünleri**  
+**Üzüm ve Kuru urunleri**  
 Kuru üzüm, kuru üzüm ve kuş üzümü hem çiğ hem de pişmiş formda köpeklerde böbrek yetmezliğine sebep olduğu bildirilmiştir.
 
 Bununla birlikte, incelemeye göre, tüm köpekler bu yiyeceklere aynı tepkileri vermiyor.
 
-**Süt ve Süt Ürünleri**  
-Süt ve süt ürünleri içerdikleri bulunan laktoz kedi ve köpeklerin sindirim sistemleri tarafından tolere edilemez diğer bir sindirim sistemleri bu besinleri işleyemez.
+**Süt ve Süt urunleri**  
+Süt ve süt urunleri içerdikleri bulunan laktoz kedi ve köpeklerin sindirim sistemleri tarafından tolere edilemez diğer bir sindirim sistemleri bu besinleri işleyemez.
 
 Bu durum sonucunda da ishal başta olmak üzere halsizlik, uyuşukluk ve iştahsızlık gibi sağlık sorunları yaşayabilirler.
 `

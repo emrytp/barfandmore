@@ -23,7 +23,7 @@ const Footer = () => {
           <h4>Barf and More</h4>
           <ul>
             <li><Link to="/">Anasayfa</Link></li>
-            <li><Link to="/urunler">Ürünler</Link></li>
+            <li><Link to="/urunler">urunler</Link></li>
             <li><a href="#">Blog</a></li>
             <li><Link to="/iletisim">İletişim</Link></li>
           </ul>

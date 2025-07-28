@@ -78,12 +78,12 @@ const AppContent = () => {
           }
         />
 
-        {/* Ürünler */}
+        {/* urunler */}
         <Route
           path="/urunler"
           element={
             <>
-              <SetTitle title="Ürünler | Barf and More" />
+              <SetTitle title="urunler | Barf and More" />
               <Products />
             </>
           }

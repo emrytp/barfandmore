@@ -25,7 +25,7 @@ const HeroSlider = () => {
       image: '/img/hero1.jpg',
       title1: 'TÜYLÜ DOSTLARINIZ İÇİN',
       title2: 'ALTERNATİF BESLENME ŞEKLİ',
-      buttonText: 'ÜRÜNLERİMİZİ İNCELEYİN',
+      buttonText: 'urunlerİMİZİ İNCELEYİN',
     },
     {
       image: '/img/hero2.jpg',

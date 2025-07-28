@@ -15,7 +15,7 @@ const Header = () => {
 
       <nav className="nav-links">
         <Link to="/">Anasayfa</Link>
-        <Link to="/urunler">Ürünler</Link>
+        <Link to="/urunler">urunler</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/iletisim">İletişim</Link>
       </nav>
